@@ -3,7 +3,7 @@ import { FaChartLine, FaCogs, FaBookOpen, FaComments, FaUser, FaBookReader } fro
 import { Link as RouterLink } from "react-router-dom";
 
 const NavBar = () => (
-  <Box bg="blue.600" p={4} shadow="md" position="fixed" top="0" width="100%" zIndex="50">
+  <Box bg="blue.600" p={4} shadow="md" position="fixed" top="0" width="100%" zIndex="50" height="60px">
     <Flex justify="space-between" align="center" maxW="container.lg" mx="auto">
       <Text color="white" fontSize="2xl" fontWeight="bold" display="flex" alignItems="center">
         <Icon as={FaBookReader} mr={2} /> ABAP eLearning

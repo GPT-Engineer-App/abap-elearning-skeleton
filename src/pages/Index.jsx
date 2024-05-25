@@ -51,7 +51,7 @@ const Index = ({ page }) => {
   };
 
   return (
-    <Container maxW="container.md" p={4}>
+    <Container maxW="container.md" p={4} overflowY="auto">
       <VStack spacing={4}>
         {currentPage === "dashboard" && (
           <Box>
