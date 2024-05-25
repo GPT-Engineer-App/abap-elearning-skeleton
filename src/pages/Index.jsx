@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container, Box, VStack, HStack, Text, Button, IconButton, Input, useToast } from "@chakra-ui/react";
 import { FaBook, FaPen, FaRobot } from "react-icons/fa";
 
@@ -13,8 +13,8 @@ const tests = [
   { id: 2, title: "Test 2", questions: ["What are ABAP reports?", "How do you create a report in ABAP?"] },
 ];
 
-const Index = () => {
-  const [currentPage, setCurrentPage] = useState("home");
+const Index = ({ page }) => {
+  const [currentPage, setCurrentPage] = useState(page || "home");
   const [selectedLesson, setSelectedLesson] = useState(null);
   const [selectedTest, setSelectedTest] = useState(null);
   const [chatInput, setChatInput] = useState("");
