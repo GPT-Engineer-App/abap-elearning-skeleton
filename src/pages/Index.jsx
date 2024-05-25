@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Box, VStack, HStack, Text, Button, IconButton, Input, useToast, Heading } from "@chakra-ui/react";
-import { FaBook, FaPen, FaRobot } from "react-icons/fa";
+import { FaBook, FaPen, FaRobot, FaChartLine, FaCogs, FaUser } from "react-icons/fa";
 
 const lessons = [
   { id: 1, title: "Introduction to SAP ABAP", content: "SAP ABAP is a programming language for developing applications for the SAP R/3 system." },
@@ -53,18 +53,43 @@ const Index = ({ page }) => {
   return (
     <Container maxW="container.md" p={4}>
       <VStack spacing={4}>
-        <HStack spacing={4}>
-          <IconButton aria-label="Lessons" icon={<FaBook />} onClick={() => setCurrentPage("lessons")} boxSize={16} />
-          <IconButton aria-label="Tests" icon={<FaPen />} onClick={() => setCurrentPage("tests")} boxSize={16} />
-          <IconButton aria-label="Chatbot" icon={<FaRobot />} onClick={() => setCurrentPage("chatbot")} boxSize={16} />
-        </HStack>
-
-        {currentPage === "home" && (
+        {currentPage === "dashboard" && (
           <Box>
-            <Heading as="h1" size="xl">
-              Welcome to SAP ABAP eLearning
+            <Heading as="h2" size="lg">
+              Dashboard
             </Heading>
-            <Text>Select a section to get started.</Text>
+            <Box>
+              <Text>Lessons Completed: 5</Text>
+              <Text>Quizzes Taken: 3</Text>
+              <Text>Total Score: 85%</Text>
+              <Text>Progress: 50%</Text>
+            </Box>
+          </Box>
+        )}
+
+        {currentPage === "features" && (
+          <Box>
+            <Heading as="h2" size="lg">
+              Key Features
+            </Heading>
+            <Box>
+              <Text>Interactive Lessons</Text>
+              <Text>Dynamic Tests</Text>
+              <Text>Chatbot Assistance</Text>
+              <Text>Progress Tracking</Text>
+            </Box>
+          </Box>
+        )}
+
+        {currentPage === "profile" && (
+          <Box>
+            <Heading as="h2" size="lg">
+              Profile
+            </Heading>
+            <Box>
+              <Text>John Doe</Text>
+              <Text>john.doe@example.com</Text>
+            </Box>
           </Box>
         )}
 
