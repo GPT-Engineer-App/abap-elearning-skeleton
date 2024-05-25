@@ -24,6 +24,24 @@ const NavBar = () => (
         <Link as={RouterLink} to="/profile" color="white" mx={2} display="flex" alignItems="center">
           <Icon as={FaUser} mr={1} /> Profile
         </Link>
+        <Link as={RouterLink} to="/lesson1" color="white" mx={2} display="flex" alignItems="center">
+          <Icon as={FaBookOpen} mr={1} /> Lesson 1
+        </Link>
+        <Link as={RouterLink} to="/lesson2" color="white" mx={2} display="flex" alignItems="center">
+          <Icon as={FaBookOpen} mr={1} /> Lesson 2
+        </Link>
+        <Link as={RouterLink} to="/lesson3" color="white" mx={2} display="flex" alignItems="center">
+          <Icon as={FaBookOpen} mr={1} /> Lesson 3
+        </Link>
+        <Link as={RouterLink} to="/test1" color="white" mx={2} display="flex" alignItems="center">
+          <Icon as={FaPencilAlt} mr={1} /> Test 1
+        </Link>
+        <Link as={RouterLink} to="/test2" color="white" mx={2} display="flex" alignItems="center">
+          <Icon as={FaPencilAlt} mr={1} /> Test 2
+        </Link>
+        <Link as={RouterLink} to="/test3" color="white" mx={2} display="flex" alignItems="center">
+          <Icon as={FaPencilAlt} mr={1} /> Test 3
+        </Link>
       </Flex>
     </Flex>
   </Box>
