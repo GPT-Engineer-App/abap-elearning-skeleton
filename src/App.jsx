@@ -8,7 +8,7 @@ import Profile from "./pages/Profile.jsx";
 const App = () => (
   <Router>
     <NavBar />
-    <Box as="main" mt="60px" overflowY="auto" height="calc(100vh - 60px)">
+    <Box as="main" mt="32" overflowY="auto" height="calc(100vh - 60px)">
       <Routes>
         <Route exact path="/" element={<Login />} />
         <Route path="/dashboard" element={<Index page="dashboard" />} />

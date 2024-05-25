@@ -1,5 +1,5 @@
 import { Box, Flex, Link, Icon, Text } from "@chakra-ui/react";
-import { FaChartLine, FaCogs, FaBookOpen, FaComments, FaUser, FaBookReader } from "react-icons/fa";
+import { FaChartLine, FaBookOpen, FaComments, FaUser, FaBookReader, FaPencilAlt } from "react-icons/fa";
 import { Link as RouterLink } from "react-router-dom";
 
 const NavBar = () => (
@@ -12,11 +12,11 @@ const NavBar = () => (
         <Link as={RouterLink} to="/dashboard" color="white" mx={2} display="flex" alignItems="center">
           <Icon as={FaChartLine} mr={1} /> Dashboard
         </Link>
-        <Link as={RouterLink} to="/features" color="white" mx={2} display="flex" alignItems="center">
-          <Icon as={FaCogs} mr={1} /> Features
-        </Link>
         <Link as={RouterLink} to="/lessons" color="white" mx={2} display="flex" alignItems="center">
           <Icon as={FaBookOpen} mr={1} /> Lessons
+        </Link>
+        <Link as={RouterLink} to="/tests" color="white" mx={2} display="flex" alignItems="center">
+          <Icon as={FaPencilAlt} mr={1} /> Tests
         </Link>
         <Link as={RouterLink} to="/chatbot" color="white" mx={2} display="flex" alignItems="center">
           <Icon as={FaComments} mr={1} /> Chatbot
