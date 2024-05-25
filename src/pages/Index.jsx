@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Container, Box, VStack, HStack, Text, Button, IconButton, Input, useToast } from "@chakra-ui/react";
+import { Container, Box, VStack, HStack, Text, Button, IconButton, Input, useToast, Heading } from "@chakra-ui/react";
 import { FaBook, FaPen, FaRobot } from "react-icons/fa";
 
 const lessons = [
@@ -54,21 +54,25 @@ const Index = ({ page }) => {
     <Container maxW="container.md" p={4}>
       <VStack spacing={4}>
         <HStack spacing={4}>
-          <IconButton aria-label="Lessons" icon={<FaBook />} onClick={() => setCurrentPage("lessons")} />
-          <IconButton aria-label="Tests" icon={<FaPen />} onClick={() => setCurrentPage("tests")} />
-          <IconButton aria-label="Chatbot" icon={<FaRobot />} onClick={() => setCurrentPage("chatbot")} />
+          <IconButton aria-label="Lessons" icon={<FaBook />} onClick={() => setCurrentPage("lessons")} boxSize={12} />
+          <IconButton aria-label="Tests" icon={<FaPen />} onClick={() => setCurrentPage("tests")} boxSize={12} />
+          <IconButton aria-label="Chatbot" icon={<FaRobot />} onClick={() => setCurrentPage("chatbot")} boxSize={12} />
         </HStack>
 
         {currentPage === "home" && (
           <Box>
-            <Text fontSize="2xl">Welcome to SAP ABAP eLearning</Text>
+            <Heading as="h1" size="xl">
+              Welcome to SAP ABAP eLearning
+            </Heading>
             <Text>Select a section to get started.</Text>
           </Box>
         )}
 
         {currentPage === "lessons" && (
           <Box>
-            <Text fontSize="2xl">Lessons</Text>
+            <Heading as="h2" size="lg">
+              Lessons
+            </Heading>
             {lessons.map((lesson) => (
               <Button key={lesson.id} onClick={() => handleLessonClick(lesson)}>
                 {lesson.title}
@@ -80,14 +84,18 @@ const Index = ({ page }) => {
         {currentPage === "lesson" && selectedLesson && (
           <Box>
             <Button onClick={() => setCurrentPage("lessons")}>Back to Lessons</Button>
-            <Text fontSize="2xl">{selectedLesson.title}</Text>
+            <Heading as="h2" size="lg">
+              {selectedLesson.title}
+            </Heading>
             <Text>{selectedLesson.content}</Text>
           </Box>
         )}
 
         {currentPage === "tests" && (
           <Box>
-            <Text fontSize="2xl">Tests</Text>
+            <Heading as="h2" size="lg">
+              Tests
+            </Heading>
             {tests.map((test) => (
               <Button key={test.id} onClick={() => handleTestClick(test)}>
                 {test.title}
@@ -99,7 +107,9 @@ const Index = ({ page }) => {
         {currentPage === "test" && selectedTest && (
           <Box>
             <Button onClick={() => setCurrentPage("tests")}>Back to Tests</Button>
-            <Text fontSize="2xl">{selectedTest.title}</Text>
+            <Heading as="h2" size="lg">
+              {selectedTest.title}
+            </Heading>
             {selectedTest.questions.map((question, index) => (
               <Text key={index}>{question}</Text>
             ))}
@@ -108,7 +118,9 @@ const Index = ({ page }) => {
 
         {currentPage === "chatbot" && (
           <Box width="100%">
-            <Text fontSize="2xl">Chatbot</Text>
+            <Heading as="h2" size="lg">
+              Chatbot
+            </Heading>
             <VStack spacing={2} align="stretch">
               <Box height="300px" overflowY="auto" border="1px solid" borderColor="gray.200" p={2}>
                 {chatMessages.map((msg, index) => (
