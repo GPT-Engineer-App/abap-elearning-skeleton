@@ -54,9 +54,9 @@ const Index = ({ page }) => {
     <Container maxW="container.md" p={4}>
       <VStack spacing={4}>
         <HStack spacing={4}>
-          <IconButton aria-label="Lessons" icon={<FaBook />} onClick={() => setCurrentPage("lessons")} boxSize={12} />
-          <IconButton aria-label="Tests" icon={<FaPen />} onClick={() => setCurrentPage("tests")} boxSize={12} />
-          <IconButton aria-label="Chatbot" icon={<FaRobot />} onClick={() => setCurrentPage("chatbot")} boxSize={12} />
+          <IconButton aria-label="Lessons" icon={<FaBook />} onClick={() => setCurrentPage("lessons")} boxSize={16} />
+          <IconButton aria-label="Tests" icon={<FaPen />} onClick={() => setCurrentPage("tests")} boxSize={16} />
+          <IconButton aria-label="Chatbot" icon={<FaRobot />} onClick={() => setCurrentPage("chatbot")} boxSize={16} />
         </HStack>
 
         {currentPage === "home" && (

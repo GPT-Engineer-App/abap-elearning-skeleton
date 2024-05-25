@@ -6,16 +6,16 @@ const NavBar = () => (
   <Box bg="teal.500" p={4}>
     <Flex justify="space-around">
       <Link as={RouterLink} to="/" color="white" display="flex" alignItems="center">
-        <Icon as={FaHome} mr={2} /> Home
+        <Icon as={FaHome} mr={2} boxSize={6} /> Home
       </Link>
       <Link as={RouterLink} to="/lessons" color="white" display="flex" alignItems="center">
-        <Icon as={FaBook} mr={2} /> Lessons
+        <Icon as={FaBook} mr={2} boxSize={6} /> Lessons
       </Link>
       <Link as={RouterLink} to="/tests" color="white" display="flex" alignItems="center">
-        <Icon as={FaPen} mr={2} /> Tests
+        <Icon as={FaPen} mr={2} boxSize={6} /> Tests
       </Link>
       <Link as={RouterLink} to="/chatbot" color="white" display="flex" alignItems="center">
-        <Icon as={FaRobot} mr={2} /> Chatbot
+        <Icon as={FaRobot} mr={2} boxSize={6} /> Chatbot
       </Link>
     </Flex>
   </Box>
