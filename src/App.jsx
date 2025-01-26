@@ -14,7 +14,15 @@ import Test3 from "./pages/Test3.jsx";
 const App = () => (
   <Router>
     <NavBar />
-    <Box as="main" mt="32" overflowY="auto" height="calc(100vh - 60px)">
+    <Box 
+      as="main" 
+      mt="60px" 
+      px={{ base: 4, md: 8 }}
+      py={4}
+      maxW="container.xl" 
+      mx="auto"
+      minH="calc(100vh - 60px)"
+    >
       <Routes>
         <Route exact path="/" element={<Login />} />
         <Route path="/dashboard" element={<Index page="dashboard" />} />
