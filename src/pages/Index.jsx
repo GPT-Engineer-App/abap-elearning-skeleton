@@ -1,6 +1,40 @@
-import { Box } from "@chakra-ui/react";
+import { Box, VStack, Input, Button, Text, Container, Flex, useToast } from "@chakra-ui/react";
+import { useState } from "react";
 
 const Index = ({ page }) => {
+  const [messages, setMessages] = useState([]);
+  const [inputMessage, setInputMessage] = useState("");
+  const toast = useToast();
+
+  const handleSendMessage = () => {
+    if (!inputMessage.trim()) {
+      toast({
+        title: "Mensagem vazia",
+        description: "Por favor, digite uma mensagem",
+        status: "warning",
+        duration: 3000,
+        isClosable: true,
+      });
+      return;
+    }
+
+    const newMessage = {
+      text: inputMessage,
+      sender: "user",
+      timestamp: new Date().toISOString(),
+    };
+
+    // Simulate bot response
+    const botResponse = {
+      text: "Obrigado por sua mensagem! Em breve implementaremos a integração com IA.",
+      sender: "bot",
+      timestamp: new Date().toISOString(),
+    };
+
+    setMessages([...messages, newMessage, botResponse]);
+    setInputMessage("");
+  };
+
   const renderContent = () => {
     switch (page) {
       case "dashboard":
@@ -26,10 +60,46 @@ const Index = ({ page }) => {
         );
       case "chatbot":
         return (
-          <div className="p-8">
-            <h1 className="text-4xl font-bold mb-6">Chatbot</h1>
-            {/* Conteúdo do Chatbot */}
-          </div>
+          <Container maxW="container.md" py={8}>
+            <VStack spacing={4} align="stretch" h="calc(100vh - 200px)">
+              <Box flex="1" overflowY="auto" bg="gray.50" p={4} borderRadius="md" mb={4}>
+                {messages.map((message, index) => (
+                  <Flex
+                    key={index}
+                    justify={message.sender === "user" ? "flex-end" : "flex-start"}
+                    mb={4}
+                  >
+                    <Box
+                      bg={message.sender === "user" ? "blue.500" : "gray.200"}
+                      color={message.sender === "user" ? "white" : "black"}
+                      px={4}
+                      py={2}
+                      borderRadius="lg"
+                      maxW="80%"
+                    >
+                      <Text>{message.text}</Text>
+                    </Box>
+                  </Flex>
+                ))}
+              </Box>
+              <Flex>
+                <Input
+                  placeholder="Digite sua mensagem..."
+                  value={inputMessage}
+                  onChange={(e) => setInputMessage(e.target.value)}
+                  onKeyPress={(e) => {
+                    if (e.key === "Enter") {
+                      handleSendMessage();
+                    }
+                  }}
+                  mr={2}
+                />
+                <Button colorScheme="blue" onClick={handleSendMessage}>
+                  Enviar
+                </Button>
+              </Flex>
+            </VStack>
+          </Container>
         );
       default:
         return (
