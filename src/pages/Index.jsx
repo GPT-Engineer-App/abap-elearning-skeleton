@@ -1,21 +1,68 @@
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 p-4 sm:p-6 md:p-8">
-      <div className="w-full max-w-lg mx-auto bg-white rounded-xl shadow-lg p-6 sm:p-8 md:p-10">
-        <div className="text-center space-y-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
-            Welcome to Your Blank App
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-md mx-auto">
-            Start building your amazing project here!
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
-              Get Started
-            </button>
-            <button className="w-full sm:w-auto px-6 py-3 bg-white text-blue-600 font-medium rounded-lg border border-blue-600 hover:bg-blue-50 transition-colors">
-              Learn More
-            </button>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4 md:p-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Seção de Boas-vindas */}
+            <div className="p-8 md:p-12 flex flex-col justify-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Bem-vindo ao ABAP eLearning
+              </h1>
+              <p className="text-lg md:text-xl text-gray-600 mb-8">
+                Aprenda ABAP de forma interativa e prática com nosso sistema de aprendizado personalizado.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button className="px-8 py-4 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                  Começar Agora
+                </button>
+                <button className="px-8 py-4 bg-white text-indigo-600 font-semibold rounded-lg border-2 border-indigo-600 hover:bg-indigo-50 transition-colors duration-300">
+                  Saiba Mais
+                </button>
+              </div>
+            </div>
+
+            {/* Seção de Recursos */}
+            <div className="bg-gradient-to-br from-indigo-500 to-purple-600 p-8 md:p-12 text-white">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">Recursos Principais</h2>
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-white/20 p-3 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-xl mb-2">Aprendizado Interativo</h3>
+                    <p className="text-white/80">Exercícios práticos e feedback em tempo real para maximizar seu aprendizado.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="bg-white/20 p-3 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-xl mb-2">Personalização</h3>
+                    <p className="text-white/80">Conteúdo adaptado ao seu ritmo e nível de conhecimento.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="bg-white/20 p-3 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-xl mb-2">Certificação</h3>
+                    <p className="text-white/80">Obtenha certificados reconhecidos ao completar os módulos.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
