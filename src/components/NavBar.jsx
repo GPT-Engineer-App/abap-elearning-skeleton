@@ -107,7 +107,7 @@ const NavBar = () => {
           <DrawerContent>
             <DrawerCloseButton />
             <DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
-            <DrawerBody bg="white" className="bg-[#2a6c86]">
+            <DrawerBody bg="white" className="bg-blue-900 hover:bg-blue-800">
               <VStack spacing={2} align="stretch">
                 <NavLinks isMobile={true} />
               </VStack>
